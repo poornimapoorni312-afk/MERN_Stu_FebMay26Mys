@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform function</title>
+    <style>
+        .animated-box{
+            
+            width:150px;
+            height: 150px;
+            background-color: brown;
+            animation-name: maveFade;
+            animation-delay: 3s;
+            animation-timing-function:ease-in-out ;
+            animation-direction:alternate ;
+            animation-fill-mode: both;
+            }
+            
+            @keyframes movefade{
+                0%{tranform:translate(0); opacity:1;}
+                100%{tranform:translateX(200px); opacity:0.3}
+            }
+
+    </style>
+</head>
+<body>
+    <h2>Transform Funtions</h2>
+    <div class="animated-box"></div>
+</body>
+</html>
