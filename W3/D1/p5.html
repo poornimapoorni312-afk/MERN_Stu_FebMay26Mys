@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Variables:Hoisting</title>
+    <title> Js Objects, arrays</title>
 </head>
 <body>
     <pre id="out"></pre>
@@ -25,32 +25,15 @@
         }
         function run(){
             clearOut();
-        if(true) {
-            var x = "var escapes the if-block";
-        }
-        print("X =", x);
-        
-        // Let :scope
-        if(true){
-            let y = "let stays in the if-block";
-            print("y inside block=",y);
 
-            
-        }
-        //print("y outside block=",y);
-        print("Before declaration", testVar)
-        var testVar ="assigned value now";
-        print("After declaration=",testVar);
+            const user ={name:"Mahesh",age:23};
+            print("User=",JSON.stringify(user));
 
-        try{
-            print("before let decn.",testLet);
-        }
-        catch(e) {
-            print("Accessing let before decn causes", e.name,e.message);
-        }
-        let testLet = "declared now";
-        print("after let decn.",testLet);
-        }
+            const myArray = [1,2,3, "Poornima"];
+            myArray.push(5);
+            print("Is it an array:?",Array.isArray(myArray));
+
+       }
 
         
         document.getElementById("runBtn").addEventListener("click",run);
