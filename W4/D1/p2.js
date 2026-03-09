@@ -13,4 +13,5 @@ function parseConfig(text) {
     }
 }
 parseConfig('{"theme":"dark"}');
+
 parseConfig('{"theme"}');
