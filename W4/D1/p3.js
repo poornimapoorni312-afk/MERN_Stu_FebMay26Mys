@@ -45,8 +45,9 @@ function createuser(name){
 }
 try{
     //createuser("");
+    
     createuser("Poorni");
 }
 catch(err){
     console.log(err.name + ": " + err.message);
-}
+} 
