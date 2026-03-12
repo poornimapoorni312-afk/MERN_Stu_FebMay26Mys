@@ -1,0 +1,43 @@
+const out = document.getElementById("out");
+
+function explain(code) {
+    if(code == 1) return "Permission denied";
+    if(code == 2) return "Position unavailable";
+    if(code == 3) return "Request timeout";
+    return "Unknown error";
+}
+
+document.getElementById("locatBtn").addEventListener("click",
+function(){
+
+    if(!navigator.geolocation){
+        out.textContent = "Geolocation is not supported in this browser";
+        return;
+    }
+
+    out.textContent = "Requesting current location...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position){
+            const data = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                accuracy: position.coords.accuracy
+            };
+
+            console.log(data);
+            out.textContent = JSON.stringify(data, null, 2);
+        },
+
+        function(error){
+            out.textContent =
+            "Error code: " + error.code +
+            " Message: " + explain(error.code);
+        },
+
+        { enableHighAccuracy: true, timeout: 5000 }
+
+    );
+
+});
