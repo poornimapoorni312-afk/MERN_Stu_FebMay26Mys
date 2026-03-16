@@ -5,6 +5,7 @@ if(!skillsContainer){
     console.log("Skills Container not found");
     return;
 }
+
 skillsContainer.innerHTML = "";
 skillsData.forEach(function(skill){
     //to create outer card

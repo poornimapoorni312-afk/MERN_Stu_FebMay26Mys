@@ -11,6 +11,7 @@ function initContactValidation() {
     }
 
     contactForm.addEventListener("submit", function (event) {
+        
         event.preventDefault();
 
         const name = contactName.value.trim();

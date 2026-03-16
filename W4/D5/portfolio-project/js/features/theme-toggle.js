@@ -5,6 +5,7 @@ function initThemeToggle() {
     const savedTheme = localStorage.getItem("portfolio-theme");
 
     // Apply saved theme on page load
+    
     if (savedTheme === "dark") {
         body.classList.add("dark-mode");
     }
