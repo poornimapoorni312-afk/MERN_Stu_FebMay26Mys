@@ -39,7 +39,6 @@ const wallet = {
     }
   };
   
-  
   // Example
   wallet.deposit(200);
   wallet.withdraw(100);
