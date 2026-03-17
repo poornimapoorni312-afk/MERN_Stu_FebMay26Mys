@@ -18,8 +18,6 @@ function mergeSettings(savedSettingsJSON, defaultSettings) {
         mergedJSON: mergedJSON
     };
 }
-
-
 // Example
 const defaultSettings = {
     theme: "light",
