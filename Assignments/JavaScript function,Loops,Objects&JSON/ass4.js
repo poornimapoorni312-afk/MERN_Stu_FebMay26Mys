@@ -24,8 +24,6 @@ const getRoute = function(role, isLoggedIn) {
             return "/denied";
     }
 };
-
-
 // Example
 console.log(getRoute("admin", true));     // /admin
 console.log(getRoute("student", true));   // /student
