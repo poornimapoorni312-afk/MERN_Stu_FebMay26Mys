@@ -9,7 +9,6 @@ addBtn.addEventListener("click", function () {
 
     const question = questionInput.value.trim();
     const answer = answerInput.value.trim();
-
     // validation
     if(question.length < 5){
         message.textContent = "Question must be at least 5 characters";
