@@ -12,7 +12,6 @@ const name = nameInput.value.trim();
 const email = emailInput.value.trim();
 const type = typeInput.value;
 const feedback = feedbackInput.value.trim();
-
 const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 if(!name || !email || !type || !feedback){
