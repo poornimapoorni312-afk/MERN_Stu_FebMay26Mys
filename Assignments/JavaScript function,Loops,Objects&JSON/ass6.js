@@ -24,14 +24,12 @@ function auditReport(reportJSON) {
     const summary = {
       okCount: okCount,
       failCount: failCount
-    };
-  
+    };  
     return {
       summary: summary,
       summaryJSON: JSON.stringify(summary)
     };
-  }
-  
+  }  
   
   // Example
   const reportJSON = `{
