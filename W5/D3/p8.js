@@ -12,6 +12,7 @@ function processPayment(isSucceeded) {
     });
 }
 
+
 async function runPaymentFlow(isSucceeded) {
     try {
         const result = await processPayment(isSucceeded);
