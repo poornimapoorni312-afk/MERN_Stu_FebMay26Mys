@@ -26,4 +26,4 @@ async function runPaymentFlow(isSucceeded) {
 // chaining calls
 runPaymentFlow(false).then(function () {
     return runPaymentFlow(true);
-});              
+});            
