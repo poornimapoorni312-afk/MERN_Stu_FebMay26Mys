@@ -1,4 +1,4 @@
-// try catch finally with async/await
+`// try catch finally with async/await
 
 function processPayment(isSucceeded) {
     return new Promise(function (resolve, reject) {
@@ -27,4 +27,4 @@ async function runPaymentFlow(isSucceeded) {
 // chaining calls
 runPaymentFlow(false).then(function () {
     return runPaymentFlow(true);
-});            
+});            `
