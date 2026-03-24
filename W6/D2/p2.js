@@ -11,4 +11,5 @@ fetchReport(function(reportMessage){
     console.log(reportMessage);
     
 });
+
 console.log("Application continues to execute further");
