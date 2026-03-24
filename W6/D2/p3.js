@@ -13,6 +13,7 @@ setTimeout(() => {
 }, 0);
 
 // Task 3 (new)
+
 setTimeout(() => {
     console.log("Timer A finished after 50ms");
 }, 50);
