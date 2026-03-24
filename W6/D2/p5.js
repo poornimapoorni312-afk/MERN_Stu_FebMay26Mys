@@ -5,6 +5,7 @@ console.log("1.Synchrounous start.");
 // Even with 0 delay,it doesn't interrupt current sync code
 setTimeout(() =>{
     console
+    
 })
 setTimeout(() => {
     console.log("4.Timer callback executed.");
