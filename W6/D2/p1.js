@@ -7,4 +7,5 @@ setTimeout(()=> {
     console.log("3. Timer callback executed.");
 },0);
 
+
 console.log("2. Synchronous task finished.");
