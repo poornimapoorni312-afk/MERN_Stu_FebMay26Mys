@@ -16,6 +16,7 @@ orderEmitter.on("OrderPlaced",
         console.log("Waiting for restaurant to accept order.",orderId);
     }        
 );
+
 orderEmitter.on("OrderPlaced",
     function(orderId,customerName){
         console.log("Hello ",customerName);
