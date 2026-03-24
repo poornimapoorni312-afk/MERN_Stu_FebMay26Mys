@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded",
         initContactValidation();
         initThemeToggle();
         filterProject();
+        
         createProjectCards();
 
 

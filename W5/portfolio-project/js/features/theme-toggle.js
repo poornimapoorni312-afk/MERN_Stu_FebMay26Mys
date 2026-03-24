@@ -10,7 +10,8 @@ function initThemeToggle() {
         body.classList.add("dark-mode");
     }
 
-    toggleBtn.addEventListener("click", function () {
+    toggleBtn.addEventListener("click", functi
+        on () {
         body.classList.toggle("dark-mode");
 
         // Save theme preference

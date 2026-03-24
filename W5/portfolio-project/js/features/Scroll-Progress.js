@@ -7,4 +7,5 @@ window.addEventListener("scroll", function () {
     const scrollPercent = (scrollTop / scrollHeight) * 100;
 
     scrollBar.style.width = scrollPercent + "%";
+    
 });

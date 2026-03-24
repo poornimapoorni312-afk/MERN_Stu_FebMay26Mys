@@ -17,4 +17,6 @@ hoverElements.forEach(el => {
     el.addEventListener("mouseleave", () => {
         cursor.classList.remove("cursor-hover");
     });
+    
+
 });

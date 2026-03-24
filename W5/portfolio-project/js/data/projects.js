@@ -18,10 +18,12 @@ const projectsData = [
     
     description:
     
+    
       "Cab booking platform that helps users quickly book rides for daily travel.",
     technologies: ["ReactJS", "ExpressJS", "MongoDB"],
     status: "Live",
-    liveDemo: "#",
+    liveDemo: "#"
+    ,
     github: "#"
   },
   {

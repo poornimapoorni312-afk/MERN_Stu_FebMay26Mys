@@ -8,6 +8,7 @@ function initModal() {
     if(!modal || !modalContent || !modalTrigger || !modalTrigger || !modalClose
         || !formCancel){
             
+            
             console.log("Modal elements not found");
             return;
         }

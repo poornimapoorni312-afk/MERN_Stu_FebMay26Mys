@@ -14,6 +14,7 @@ function filterProject(){
         const projectName=document.createElement("h2");
         projectName.className="text-xl font-bold mb-2";
         projectName.textContent=project.name;
+        
 
         //to create category of the project
         const projectCategory=document.createElement("h5");

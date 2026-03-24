@@ -8,6 +8,7 @@ function initContactValidation() {
     if (!contactModal || !contactForm || !contactName || !contactEmail || !formMessage) {
         console.log("Contact form elements not found");
         return;
+        
     }
 
     contactForm.addEventListener("submit", function (event) {

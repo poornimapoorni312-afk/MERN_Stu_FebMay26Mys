@@ -11,6 +11,7 @@ function createProjectCards() {
     projects.forEach(project => {
         const card = document.createElement("div");
         card.className = "bg-white p-6 rounded shadow";
+        
 
         card.innerHTML = `
             <h3 class="text-xl font-bold mb-2">${project.title}</h3>

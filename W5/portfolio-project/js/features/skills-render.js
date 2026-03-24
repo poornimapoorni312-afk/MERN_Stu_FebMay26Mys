@@ -23,6 +23,7 @@ function renderSkills() {
         iconBox.appendChild(iconText);
 
         // name
+        
         const skillName = document.createElement("h3");
         skillName.className = "text-xl font-bold mb-2";
         skillName.textContent = skill.name;
