@@ -17,4 +17,5 @@ setTimeout(() => {
     console.log("5. Timer callback executed.");
 },0);
 
+
 console.log("2. End of script");
