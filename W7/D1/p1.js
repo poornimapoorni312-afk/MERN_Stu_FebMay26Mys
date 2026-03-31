@@ -7,6 +7,7 @@ const express = require("express");
 
 //calling express() creates the main application objects
 //This object is used to register routes and middleware
+
 const app = express();
 
 //app.get() handles GET requests for a specific path 
