@@ -16,6 +16,7 @@ app.use(function(req,res,next){
     next();
 
 });
+
 app.get("/admin",function(req,res,next){
     console.timeLog("Route specific middleWare for / admin");
     next();
