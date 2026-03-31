@@ -5,10 +5,16 @@
 
 const express = require("express");
 
-const app = express(); // ✅ fixed
+const app = express(); //
 
-// GET - fetch users
+// To raed
 app.get("/users", function (req, res) {
+    
+    res.status(200).json([{message:"Success"},
+        {id:1,name:"Priya"},
+        {id:2,name:"Naveen"},
+        {id:3,name:"poorni"},
+    ])
     res.send("Returning all Users");
 });
 
