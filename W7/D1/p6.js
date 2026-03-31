@@ -1,3 +1,5 @@
+
+//Sending JSON responses in express
 const express = require("express");
 
 const app = express();
@@ -10,9 +12,9 @@ app.get("/api/status", function (req, res) {
         message: "Express API is working"
     });
 });
-
+                                    
 app.get("/api/error", function (req, res) {
-    // res.status() sets HTTP status code
+    // res.status() sets HTTP status code                                                                                           
     res.status(404).json({
         success: false, // fixed
         message: "Requested resource is not found."
@@ -22,3 +24,4 @@ app.get("/api/error", function (req, res) {
 app.listen(4000, function () {
     console.log("Express server running at http://localhost:4000");
 });
+
