@@ -15,6 +15,7 @@ app.use(function(req,res,next){
  
     //next() is required when this middlewarw does not finish the response
     next();
+    
 
 });
 app.get("/",function(req,res){
