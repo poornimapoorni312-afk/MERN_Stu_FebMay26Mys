@@ -7,7 +7,6 @@ const app = express();
 app.get("/", function (req, res) {
     res.send("Home route in express server");
 });
-
 // About route
 app.get("/about", function (req, res) {
     res.send("About route in express server");
