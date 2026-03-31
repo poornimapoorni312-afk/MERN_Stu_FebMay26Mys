@@ -17,7 +17,6 @@ app.get("/users", function (req, res) {
     ])
     res.send("Returning all Users");
 });
-
 // POST - create user
 app.post("/users", function (req, res) {
     res.status(201).send("User created.");
