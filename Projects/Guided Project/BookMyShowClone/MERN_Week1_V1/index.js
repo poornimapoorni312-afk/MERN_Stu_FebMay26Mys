@@ -6,6 +6,7 @@ const movies = require("./movies");
 // console.log(movies);
 const bookingEmitter = require("./events");
 const {
+    
     validateMovieSelection,
     validateTimeSelection,
     validateSeatCount
