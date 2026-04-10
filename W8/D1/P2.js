@@ -1,68 +1,63 @@
-// CRUD operation in MongoDB using Mongoose
+// CRUD operations in MongoDB using Mongoose
 const mongoose = require("mongoose");
+async function runCrudDemo(){
+    try{
+        await mongoose.connect("mongodb://localhost:27017/abcmern");
+        console.log("MongoDB connected successfully");
 
-async function runCrudDemo() {
-  try {
-    await mongoose.connect("mongodb://localhost:27017/abcmern");
-    console.log("MongoDB connected successfully");
+        const studentSchema = new mongoose.Schema({
+            name: String,
+            age: Number,
+            role: String
+        });
 
-    const studentSchema = new mongoose.Schema({
-      name: String,
-      age: Number,
-      role: String
-    });
+        const Student = mongoose.models.Student || mongoose.model("Student",studentSchema);
+        //Clearing previous demo data 
+        await Student.deleteMany({role:"demo-student"});
 
-    const Student =
-      mongoose.models.Student || mongoose.model("Student", studentSchema);
+        //Create using save()
+        const firstStudent = new Student({
+            name: "Poorni",
+            age: 20,
+            role: "demo-student"
+        });
+        await firstStudent.save();
+        // console.log("Created new student with save()",firstStudent);
 
-    // Clearing previous demo data
-    await Student.deleteMany({ role: "demo-student" });
+        //Create using create()
+        const secondStudent = await Student.create({
+            name: "Naveen",
+            age: 19,
+            role: "demo-student"
+        });
+        // console.log("Created new student with create()",secondStudent);
 
-    // Create using save()
-    const firstStudent = new Student({
-      name: "Poornima",
-      age: 20,
-      role: "demo-student"
-    });
+        //Read using find()
+        const allDemoStudents = await Student.find({role:"demo-student"});
+        // console.log("Read with find(): ",allDemoStudents);
 
-    await firstStudent.save();
-    console.log("Created new student with save()", firstStudent);
+        //Read using findOne()
+        const oneDemoStudent = await Student.findOne({name:"Bipin"});
+        console.log("Read with findOne(): ",oneDemoStudent);
 
-    // Create using create()
-    const secondStudent = await Student.create({
-      name: "Naveen",
-      age: 21,
-      role: "demo-student"
-    });
+        //Update using findByIdAndUpdate()
+        const id = '69d882a41b1a446184ed04bf';
+        const updatedStudent = await Student.findByIdAndUpdate(
+            id,
+            {age:20},
+            {new:true}
+        );
+        console.log("Updated with findByIdAndUpdate():",updatedStudent);
 
-    console.log("Created new student with create()", secondStudent);
+        // Delete using findByIdAndDelete()
+        const deletedStudent = await Student.findByIdAndDelete(firstStudent._id);
+        console.log("Deleted with findByIdAndDelete():",deletedStudent);
 
-    // Read using find()
-    const allDemoStudents = await Student.find({ role: "demo-student" });
-    console.log("Read with find(): ", allDemoStudents);
-
-    // Read using findOne()
-    const oneDemoStudent = await Student.findOne({ role: "demo-student" });
-    console.log("Read with findOne(): ", oneDemoStudent);
-
-    // Update using findByIdAndUpdate()
-    const updatedStudent = await Student.findByIdAndUpdate(
-      secondStudent._id,
-      { age: 20 },
-      { new: true }
-    );
-
-    console.log("Updated with findByIdAndUpdate():", updatedStudent);
-
-    // Delete using findByIdAndDelete()
-    const deletedStudent = await Student.findByIdAndDelete(firstStudent._id);
-    console.log("Deleted with findByIdAndDelete():", deletedStudent);
-
-    await mongoose.connection.close();
-    console.log("connection closed");
-  } catch (error) {
-    console.log("Crud demo error:", error.message);
-  }
+        await mongoose.connection.close();
+        console.log("connection closed");
+    }
+    catch(error){
+        console.log("Crud demo error:",error.message);
+    }
 }
-
 runCrudDemo();
