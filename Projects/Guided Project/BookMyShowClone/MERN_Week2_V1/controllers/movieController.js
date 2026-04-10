@@ -6,7 +6,7 @@ function getHome(req,res){
     res.status(200).json({
         success:true,
         message:"Welcome to BookMyShow Express backend"
-    });
+    });  
 }
 
 function getAllMovies(req,res){
