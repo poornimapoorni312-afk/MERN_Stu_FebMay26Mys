@@ -8,6 +8,7 @@ const bookingEmitter = require("./events");
 const {
     
     validateMovieSelection,
+    
     validateTimeSelection,
     validateSeatCount
 } = require("./validator");
