@@ -7,6 +7,9 @@ function cancelBooking(movies) {
     const booking = getCurrentBooking();
 
     if (!booking) {
+
+
+        
         bookingEmitter.emit("bookingFailed", "No booking found to cancel");
         return null;
     }
