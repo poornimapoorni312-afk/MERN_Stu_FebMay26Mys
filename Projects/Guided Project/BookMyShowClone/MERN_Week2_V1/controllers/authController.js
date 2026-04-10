@@ -62,7 +62,7 @@ function logoutUser(req,res,next){
    }
 }
 function getProfile(req,res,next){
-    try{
+    try{  
         res.status(200).json({
         success:true,
         message:"Profile fetched Successful",
