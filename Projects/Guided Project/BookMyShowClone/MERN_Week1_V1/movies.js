@@ -11,6 +11,7 @@ const movies = [
             {time: "6:00 PM",seatsAvailable: 30}
         ]
     },
+    
     {
         id:2,
         title:"LoveMocktail3",
