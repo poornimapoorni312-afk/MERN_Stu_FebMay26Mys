@@ -8,6 +8,7 @@ function getCurrentBooking(){
 }
 
 function clearCurrentBooking(){
+    
     currentBooking = null;
 }
 
