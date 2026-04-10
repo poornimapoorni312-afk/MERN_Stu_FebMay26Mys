@@ -9,7 +9,7 @@ function bookingValidationHandler(req,res,next){
 
     if (!movieId || !showtimeId || !seatCount) {
         return next(new CustomError("movieId,showtimeId,seatCount are required",404));
-    }
+    }  
     next();
 }
 
