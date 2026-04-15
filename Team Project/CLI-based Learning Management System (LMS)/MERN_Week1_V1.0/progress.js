@@ -1,99 +1,51 @@
-// Handles lesson completion tracking, progress calculation, and progress summary display
+const { getEnrolledCourses } = require("./enroll");
 
-const enrollingEmitter = require("./events");
-const { getCurrentEnrolling } = require("./enroll");
+// Complete lesson
+function completeLesson(courseId, lessonIndex) {
+  const enrolledCourses = getEnrolledCourses();
+  const course = enrolledCourses.find(c => c.id === courseId);
 
-let progressData = {
-    courseId: null,
-    completedLessons: []
-};
+  if (!course) return "Not enrolled in this course";
 
-// Mark lesson as completed
-async function markLessonComplete(course, lessonIndex) {
-    try {
-        const enrolling = getCurrentEnrolling();
-        if (!enrolling) {
-            throw "You are not enrolled in any course.";
-        }
+  if (lessonIndex < 0 || lessonIndex >= course.lessons.length) {
+    return "Invalid lesson index";
+  }
 
-        if (enrolling.courseId !== course.id) {
-            throw "You are not enrolled in this course.";
-        }
+  if (!course.completedLessons.includes(lessonIndex)) {
+    course.completedLessons.push(lessonIndex);
+  }
 
-        if (lessonIndex < 0 || lessonIndex >= course.lessons.length) {
-            throw "Invalid lesson number.";
-        }
+  // Calculate progress
+  course.progress =
+    (course.completedLessons.length / course.lessons.length) * 100;
 
-        if (progressData.completedLessons.includes(lessonIndex)) {
-            throw "Lesson already completed.";
-        }
-
-        progressData.courseId = course.id;
-        progressData.completedLessons.push(lessonIndex);
-
-        enrollingEmitter.emit("lessonCompleted", {
-            lessonNumber: lessonIndex + 1,
-            lessonTitle: course.lessons[lessonIndex]
-        });
-
-        return "Lesson marked as completed.";
-
-    } 
-    catch (error) 
-    {
-        enrollingEmitter.emit("operationFailed", error);
-        throw error;
-    }
+  return `Progress updated: ${course.progress.toFixed(2)}%`;
 }
 
-// Calculate progress
-async function calculateProgress(course) {
-    try {
-        const enrolling = getCurrentEnrolling();
+// View progress of all enrolled courses
+function viewProgress() {
+  const enrolledCourses = getEnrolledCourses();
 
-        if (!enrolling) {
-            throw "No active enrollment.";
-        }
+  if (enrolledCourses.length === 0) {
+    console.log("\n No enrolled courses");
+    return;
+  }
 
-        let completed = 0;
+  console.log("\n Course Progress:\n");
 
-        if (progressData.courseId === course.id) {
-            completed = progressData.completedLessons.length;
-        }
+  enrolledCourses.forEach(course => {
+    console.log(`ID: ${course.id} - ${course.title}`);
+    console.log(`Progress: ${course.progress.toFixed(2)}%`);
 
-        const total = course.lessons.length;
-        const percentage = ((completed / total) * 100).toFixed(2);
-
-        return {
-            completed,
-            total,
-            percentage
-        };
-
-    } catch (error) {
-        enrollingEmitter.emit("operationFailed", error);
-        throw error;
+    if (course.progress === 100) {
+      console.log(" Completed!");
     }
-}
 
-// View progress summary
-async function viewProgress(course) {
-    try {
-        const progress = await calculateProgress(course);
-
-        // emit event
-        enrollingEmitter.emit("progressViewed", progress);
-
-        return progress;
-
-    } catch (error) {
-        enrollingEmitter.emit("operationFailed", error);
-        throw error;
-    }
+    console.log("----------------------");
+  });
 }
 
 module.exports = {
-    markLessonComplete,
-    viewProgress,
-    calculateProgress
+  completeLesson,
+  viewProgress
 };
