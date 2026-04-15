@@ -1,30 +1,14 @@
-// withdraw.js
-// To withdraw the existing booking if exists 
+const { getEnrolledCourses } = require("./enroll");
 
-const enrollingEmitter=require("./events");
-const {getCurrentEnrolling,clearCurrentEnrolling}=require("./enroll");
+function withdrawCourse(courseId) {
+  const enrolledCourses = getEnrolledCourses();
 
-function withdrawEnrolling(courses){
-    const enrolling=getCurrentEnrolling();
-    if(!enrolling){ 
-        enrollingEmitter.emit("enrollingFailed","No enrolling found to withdraw.");
-        return null;
-    }
-    const course=courses.find((c)=>c.id===enrolling.courseId);
-    if(!course){
-        enrollingEmitter.emit("enrollingFailed","Course data not found while withdrawing enrolling.");
-        return null;
-    }
-    // restore seats
-    course.seats+=enrolling.seats;
-
-    // clear Current Booking
-    clearCurrentEnrolling();
-
-    enrollingEmitter.emit("enrollingWithdrawn",enrolling);
-    return enrolling;
+  const index = enrolledCourses.findIndex(c => c.id === courseId);
+  if (index === -1) {
+    return "You are not enrolled in this course";
+  }
+  const removed = enrolledCourses.splice(index, 1);
+  return `Withdrawn from ${removed[0].title}`;
 }
 
-module.exports={
-    withdrawEnrolling
-};
+module.exports = { withdrawCourse };
