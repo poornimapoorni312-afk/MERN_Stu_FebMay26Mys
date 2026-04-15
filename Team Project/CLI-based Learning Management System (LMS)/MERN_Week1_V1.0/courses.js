@@ -1,31 +1,38 @@
-const courses = [
+const courses=[
   {
-    id: 1,
-    title: "Node.js Basics",
-    instructor: "John Doe",
-    lessons: ["Intro", "Modules", "Async", "Events"],
-    category: "Programming",
-    level: "Beginner",
-    seats: 20
+    id:1,
+    title:"Node.js Basics",
+    instructor:"Rakesh",
+    lessons:["Intro","Modules","Async","Events"],
+    category:"Programming",
+    level:"Beginner",
+    seats:3
   },
   {
-    id: 2,
-    title: "MongoDB",
-    instructor: "Jane Smith",
-    lessons: ["Intro", "CRUD", "Aggregation"],
-    category: "Database",
-    level: "Intermediate",
-    seats: 20
+    id:2,
+    title:"MongoDB",
+    instructor:"XYZ",
+    lessons:["Intro", "CRUD", "Aggregation"],
+    category:"Database",
+    level:"Intermediate",
+    seats:2
   },
   {
     id: 3,
-    title: "HTML & CSS fundaments",
-    instructor: "ABC",
-    lessons: ["Introduction", "HTML Basis", "Forms"],
-    category: "Programming",
-    level: "Intermediate",
-    seats: 20
+    title:"HTML & CSS",
+    instructor:"ABC",
+    lessons:["Intro","Form & Input Fields", "Layouts", "FlexBox", "Grid"],
+    category:"Web Development",
+    level:"Beginner",
+    seats:5
   }
 ];
 
-module.exports = courses;
+function viewCourses() {
+  console.log("\n Available Courses:");
+  courses.forEach(c => {
+    console.log(`ID: ${c.id} - ${c.title}`);
+  });
+}
+
+module.exports = {courses,viewCourses};
