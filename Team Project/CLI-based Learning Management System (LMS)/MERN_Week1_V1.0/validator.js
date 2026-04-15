@@ -1,20 +1,22 @@
-// Callback based validation functions
+function validateCourseId(id) {
+  const num = parseInt(id);
 
-function validateCourseSelection(courses,courseId,callback){
-    const selectedCourse=courses.find((course)=>course.id===courseId);
+  if (isNaN(num) || num <= 0) {
+    return null;
+  }
+  return num;
+}
 
-    if(!selectedCourse){
-        return callback("Invalid movie selection. Choose a valid movie ID.",null);
-    }
-    callback(null,selectedCourse);
+function validateLessonIndex(index) {
+  const num = parseInt(index);
+
+  if (isNaN(num) || num < 0) {
+    return null;
+  }
+  return num;
 }
-function validateSeats(seats,callback){
-    if(isNaN(seats) || seats <= 0){
-        return callback("Invalid seat count. Enter a valid seat count.",null);
-    }
-    callback(null,seats);
-}
+
 module.exports = {
-    validateCourseSelection,
-    validateSeats
+  validateCourseId,
+  validateLessonIndex
 };
