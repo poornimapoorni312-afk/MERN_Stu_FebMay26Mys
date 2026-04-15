@@ -1,4 +1,20 @@
 const EventEmitter = require("events");
-const enrollingEmitter = new EventEmitter();
+const emitter = new EventEmitter();
 
-module.exports = enrollingEmitter;
+emitter.on("enroll", (msg) => {
+  console.log(`${msg}`);
+});
+
+emitter.on("progress", (msg) => {
+  console.log(`${msg}`);
+});
+
+emitter.on("withdraw", (msg) => {
+  console.log(`${msg}`);
+});
+
+emitter.on("error", (msg) => {
+  console.log(`${msg}`);
+});
+
+module.exports = emitter;
