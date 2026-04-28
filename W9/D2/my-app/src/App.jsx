@@ -5,6 +5,7 @@ import { FunctionaName } from './components/FunctionalCompOne.jsx'
 import {FunctionalComponentsBasics } from './components/FunctionalComponentsbasics.jsx'
 import { ClassComponentsBasics } from './components/ClassComponentsBasics.jsx'
 import { FunctionComp } from './components/FunctionalComponentsAdv.jsx'
+import { ClassComponentState } from './components/ClassComponentsState.jsx'
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
     {/*Component name*/}
       {/* <FunctionaName />
       {/* <FunctionalComponentsBasics/>  */}
-      <ClassComponentsBasics/>
-      <FunctionComp/>
+      {/* <ClassComponentsBasics/> */}
+      {/* <FunctionComp/> */}
+      <ClassComponentState/>
     </> 
   )
 }
