@@ -12,3 +12,4 @@ const skills = [
   { name: "GitHub", category: "Tools" },
   { name: "VS Code", category: "Tools" }
 ];
+

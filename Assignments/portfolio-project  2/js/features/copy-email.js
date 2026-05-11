@@ -1,10 +1,11 @@
-<input id="contact-email" type="email" placeholder="email@website.com"
-    class="w-full border rounded px-4 py-3">
+function initCopyEmail() {
+  const email = "your@email.com";
+  const btn = document.getElementById("copy-email");
 
-<button id="copy-email"
-class="bg-gray-300 px-4 py-2 rounded w-full">
-Copy My Email
-</button>
+  if (!btn) return;
 
-
-<p id="form-message" class="text-sm text-red-500"></p>
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(email);
+    btn.textContent = "Copied!";
+  });
+}
