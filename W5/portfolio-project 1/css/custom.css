@@ -1,22 +1,4 @@
-/* existing dark mode styles */
-.dark-mode{
-    background-color: rgb(9, 4, 28);
-    color: white;
-}
-.dark-mode nav{
-    background-color: rgb(236, 197, 197);
-}
-.dark-mode section{
-    background-color: #8b868a;
-}
-.dark-mode .bg-white{
-    background-color: black;
-}
-.dark-mode .text-gray-700{
-    color: white;  
-}
-
-/* ✅ Scroll bar (light mode) */
+/* ✅ Scroll bar */
 #scroll-bar {
     position: fixed;
     top: 0;
@@ -28,16 +10,9 @@
     transition: width 0.2s ease;
 }
 
-/* ✅ Scroll bar (dark mode) */
-.dark-mode #scroll-bar {
-    background: linear-gradient(to right, cyan, purple);
-}
-
-
 /* ===== CUSTOM CURSOR ===== */
-
 body {
-    cursor: none; /* hide default cursor */
+    cursor: none;
 }
 
 #cursor {
@@ -54,7 +29,7 @@ body {
     transition: all 0.1s ease;
 }
 
-/* Glow effect */
+/* Glow */
 #cursor::after {
     content: "";
     position: absolute;
@@ -65,26 +40,16 @@ body {
     top: -11px;
     left: -11px;
     filter: blur(10px);
-    
-
 }
 
-/* Hover effect */
+/* Hover */
 .cursor-hover {
     width: 35px !important;
     height: 35px !important;
     background: rgba(255, 0, 255, 0.7);
 }
 
-/* Dark mode cursor */
-.dark-mode #cursor {
-    background: rgba(255, 0, 255, 0.8);
-}
-
-.dark-mode #cursor::after {
-    background: rgba(255, 0, 255, 0.3);
-}
-
+/* Skill animation */
 .skill-bar {
     width: 0;
     transition: width 1.5s ease-in-out;
