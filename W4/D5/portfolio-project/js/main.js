@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded",
         initModal();
         initContactValidation();
         initThemeToggle();
+        initProjectFilter();
+        initProjectSearch() ;
     }
     
 )

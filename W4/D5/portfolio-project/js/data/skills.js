@@ -10,8 +10,8 @@ const skillsData = [
     id: 2,
 
     
-    name: "Tailwind CSS",
-    
+    name: "Tailwind CSS",      
+
     shortLabel: "T",
     description: "Responsive layouts, utility-first styling, and clean UI building."
   },
