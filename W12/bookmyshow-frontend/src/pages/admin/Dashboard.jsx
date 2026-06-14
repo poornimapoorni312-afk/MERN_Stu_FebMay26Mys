@@ -8,11 +8,14 @@ SPRINT 1 – ADMIN DASHBOARD
 TOPICS COVERED:
 
 
+
+
 ✓ Functional Components
 ✓ Rendering Lists
 ✓ map()
 ✓ Dashboard Layout
 ✓ Reusable UI Patterns
+
 
 
 WHY THIS COMPONENT?

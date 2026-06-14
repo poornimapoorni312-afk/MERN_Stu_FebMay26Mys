@@ -18,7 +18,9 @@ TOPICS COVERED:
 WHY THIS COMPONENT?
 
 
+
 Administrators need the ability to manage movie data.
+
 
 
 Sprint 1:
